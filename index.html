@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candle Fun (Pure CSS Animation)</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <section>
+        <div id="one" class="tilt-l">Hap</div>
+        <div id="two" class="tilt-r">Hap</div>
+        <div id="three" class="tilt-r2x">6 Month</div>
+        <!-- <!-- <div id="four" class="tilt-l">gaze</div> -->
+        <div id="five" class="tilt-r">with my love</div> 
+        <br>
+        <br>
+        <!-- <div id="six" class="tilt-l2x">through</div> -->
+        <div id="seven" class="tilt-r2x">i wish you</div>
+        <div id="eight" class="tilt-l2x">Happy all time</div>
+        
+        <div id="nine" class="tilt-r">with me</div>
+        
+        <!-- <div id="ten" class="tilt-l">flight.</div> -->
+      </section>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="candles">
+    <div class="light__wave"></div>
+    <div class="candle1">
+      <div class="candle1__body">
+        <div class="candle1__eyes">
+          <span class="candle1__eyes-one"></span>
+          <span class="candle1__eyes-two"></span>
+        </div>
+        <div class="candle1__mouth"></div>
+      </div>
+      <div class="candle1__stick"></div>
+    </div>
+    
+    
+    <div class="candle2">
+      <div class="candle2__body">
+        <div class="candle2__eyes">
+          <div class="candle2__eyes-one"></div>
+          <div class="candle2__eyes-two"></div>
+        </div>
+      </div>
+      <div class="candle2__stick"></div>
+    </div>
+    <div class="candle2__fire"></div>
+    <div class="sparkles-one"></div>
+    <div class="sparkles-two"></div>
+    <div class="candle__smoke-one">
+
+    </div>
+    <div class="candle__smoke-two">
+
+    </div>
+    
+  </div>
+  <div class="floor">
+  </div>
+  
+
+</div>
+<!-- partial -->
+  <div class="hearts-container"></div>
+
+</body>
+  <script>
+  function createHeart() {
+    const heart = document.createElement("img");
+    heart.classList.add("heart");
+    heart.src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDA0Y21tMTgzcXpnZHBkNno3d2xiYmIzZGtva2dzd2VlaXJza25keCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif"; // ใส่ที่อยู่ไฟล์ GIF ที่ต้องการ
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.width = (Math.random() * 35 + 62) + "px"; // ขนาดหัวใจจาก GIF
+    document.querySelector(".hearts-container").appendChild(heart);
+
+    setTimeout(() => heart.remove(), 4000); // ลบหัวใจหลังแอนิเมชัน
+  }
+
+  // เริ่มสร้างหัวใจหลัง 6 วินาที (ตอนแอนิเมชันเทียนใกล้จบ)
+  setTimeout(() => {
+    const interval = setInterval(createHeart, 1000); // ปล่อยหัวใจเรื่อย ๆ
+
+    // หยุดหัวใจ และเปลี่ยนหน้าหลังจาก 4 วินาที (รวมทั้งหมด 10 วิจากเริ่มแอนิเมชัน)
+    setTimeout(() => {
+      clearInterval(interval);
+      window.location.href = "message.html"; // เปลี่ยนไปหน้าถัดไป
+    }, 10000);
+  }, 3000);
+</script>
+
+</html>
