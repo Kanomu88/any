@@ -17,7 +17,7 @@
     }
     video {
         
-        align-items: center;
+
         width: 100%;
         border-radius: 15px;
         margin: 20px 0;
@@ -28,17 +28,24 @@
     <div class="message-container">
         <h1 class="fade-in">รักอ๊วนนนนน 💕</h1>
         <p>เค้าขอบคุณอ้วนๆมาก ตลอดเวลาที่เราอยู่ด้วยกัน เค้ามีความสุขมากจิงๆ   เป็นช่วงเวลาที่ดีที่สุดสำหรับเค้าเลย อ้วนๆคอยเป็นทุกอย่างให้เค้า คอยซัพพอตเค้า เค้าภูมิใจมากๆที่มีอ้วนๆเป็นแฟน </p>
-        <button onclick="window.location.href='image.html'">กดจิ</button>
+        <button onclick="playVideo()">กดจิ</button>
+        <button onclick="window.location.href='image.html'">กดอีก</button>
 
     </div>
 
 </body>
-<video autoplay loop>
-    <source src="1.mp4" type="video/mp4">
+<video id="myVideo" width="100%" height="auto">
+    <source src="./1.mp4" type="video/mp4">
     เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
-    <!-- <video src="1.mp4"></video> -->
 </video>
-<script>
 
+
+
+<script>
+    function playVideo() {
+        var video = document.getElementById("myVideo");
+        video.play();
+        video.muted = false; // เปิดเสียง
+    }
 </script>
 </html>
